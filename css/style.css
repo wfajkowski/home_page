@@ -1,0 +1,259 @@
+:root {
+    box-sizing: border-box;
+    --nav-color: #012a50;
+    font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 291px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container>* {
+    text-align: justify;
+}
+
+/*Header*/
+
+.top .menu {
+    background-color: var(--nav-color);
+}
+
+.top .image-container {
+    height: 450px;
+    background-image: url(../photo/header450.jpg);
+    background-position: center;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-items>* {
+    list-style: none;
+    display: flex;
+}
+
+.menu-items a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.menu-items a:hover {
+    background: rgba(0, 0, 0, 0.3)
+}
+
+.avatar {
+    border: 10px solid var(--nav-color);
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.top .title {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 3rem;
+    font-family: 'Prompt', sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+/*Main*/
+
+.container>main {
+    background-color: white;
+    height: auto;
+    min-height: 60vh;
+    padding: 0 10vw;
+}
+
+main section {
+    padding: 5vh 0px;
+}
+
+.form {
+    background-color: rgba(211, 211, 211, 0.5);
+    max-width: 60vw;
+    margin-top: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1.5rem;
+}
+
+form>* {
+    flex: 1;
+    text-align: left;
+    padding: 10px;
+}
+
+.field,
+.field:focus,
+.field:active {
+    box-shadow: 0 0 0px 1000px white inset;
+    border: none;
+    border: solid 1px rgb(211, 211, 211);
+    border-radius: 5px;
+    outline: none;
+}
+
+#message {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.button {
+    padding: 15px;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 1rem;
+    border-style: none;
+    border-radius: 5px;
+    background-color: var(--nav-color);
+    color: white;
+}
+
+.button:hover {
+    background-color: rgb(1, 29, 56);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active {
+    transform: scale(0.995);
+}
+
+/*Footer*/
+
+.container>footer {
+    background-color: var(--nav-color);
+}
+
+footer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    align-items: center;
+}
+
+footer>div {
+    color: white;
+    padding: 20px 5px;
+    position: relative;
+    margin: auto;
+    left: 70px;
+    font-size: 0.75rem;
+}
+
+.social {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.social>* {
+    padding: 20px 15px;
+}
+
+.social .fa {
+    color: white;
+    text-decoration: none;
+}
+
+.social i:hover {
+    color: var(--nav-color);
+    background-color: white;
+    outline: 1px solid white;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    .menu-items {
+        flex-wrap: wrap;
+    }
+
+    .menu-items>li {
+        flex: 1 100%;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .top .title {
+        font-size: 2rem;
+    }
+
+    .form {
+        max-width: 80vw;
+    }
+
+    form {
+        max-width: 70vw;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+
+    footer>div {
+        min-width: 291px;
+        position: relative;
+        left: 0px;
+        text-align: center;
+    }
+
+    footer>* {
+        margin: 0 auto;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .top .title {
+        font-size: 2.3rem;
+    }
+
+    .form {
+        max-width: 70vw;
+    }
+
+    form {
+        max-width: 60vw;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {}
