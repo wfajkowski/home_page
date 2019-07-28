@@ -91,7 +91,41 @@ body {
 }
 
 main section {
-    padding: 5vh 0px;
+    padding-top: 5vh;
+}
+
+.section {
+    display: flex;
+    margin-top: 20px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.photo {
+    flex: 1;
+    margin: 5px 20px 5px 20px;
+    width: auto;
+    height: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+p {
+    flex: 1 1 0;
+    line-height: 1.5rem;
+}
+
+.work .section .photo {
+    order: 2;
 }
 
 .form {
@@ -156,6 +190,25 @@ form>* {
     transform: scale(0.995);
 }
 
+.section.up {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.fa.fa-angle-up {
+    font-size: 3rem;
+    color: var(--nav-color);
+}
+
+.fa.fa-angle-up:hover {
+    font-size: 3rem;
+    color: rgb(1, 29, 56);
+}
+
 /*Footer*/
 
 .container>footer {
@@ -179,6 +232,10 @@ footer>div {
     font-size: 0.75rem;
 }
 
+#contact {
+    margin-top: 20px;
+}
+
 .social {
     list-style: none;
     display: flex;
@@ -194,10 +251,9 @@ footer>div {
     text-decoration: none;
 }
 
-.social i:hover {
+.social i:hover,
+.social i:active {
     color: var(--nav-color);
-    background-color: white;
-    outline: 1px solid white;
 }
 
 /* Mobile Styles */
@@ -214,6 +270,10 @@ footer>div {
 
     .top .title {
         font-size: 2rem;
+    }
+
+    .work .section .photo {
+        order: 0;
     }
 
     .form {
@@ -233,10 +293,15 @@ footer>div {
         position: relative;
         left: 0px;
         text-align: center;
+        padding: 10px;
     }
 
     footer>* {
         margin: 0 auto;
+    }
+
+    .social>* {
+        padding: 10px;
     }
 }
 
@@ -244,6 +309,18 @@ footer>div {
 @media only screen and (min-width: 401px) and (max-width: 960px) {
     .top .title {
         font-size: 2.3rem;
+    }
+
+    .work .section .photo {
+        order: 0;
+    }
+
+    .photo {
+        margin: 0 0 20px 0;
+    }
+
+    p {
+        flex: 1 1 100%;
     }
 
     .form {
