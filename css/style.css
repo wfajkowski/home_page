@@ -1,6 +1,7 @@
 :root {
     box-sizing: border-box;
-    --nav-color: #012a50;
+    --myblue: #012a50;
+    --myyellow: #edd30a;
     font-size: 18px;
 }
 
@@ -19,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    min-width: 291px;
+    min-width: 320px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -28,10 +29,59 @@ body {
     text-align: justify;
 }
 
+.panel {
+    background: var(--myyellow);
+    width: 17vw;
+    max-width: 60px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+    animation-name: slide;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    border-radius: 0 0 5px 0;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slide {
+    0% {
+        left: -1000px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+.panel>.social {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+}
+
+.panel>.social>* {
+    flex: 1;
+    padding: 15px;
+}
+
+.panel>.social>*:hover {
+    background-color: var(--myblue);
+}
+
+.panel .social .fa {
+    color: var(--myblue);
+}
+
+.panel>.social>*:hover .fa {
+    color: var(--myyellow);
+}
+
 /*Header*/
 
 .top .menu {
-    background-color: var(--nav-color);
+    background-color: var(--myblue);
 }
 
 .top .image-container {
@@ -59,26 +109,30 @@ body {
     text-decoration: none;
     text-align: center;
     padding: 20px 15px;
+    width: 100%;
 }
 
 .menu-items a:hover {
-    background: rgba(0, 0, 0, 0.3)
+    background: var(--myyellow);
+    color: var(--myblue);
 }
 
 .avatar {
-    border: 10px solid var(--nav-color);
+    border: 10px solid var(--myblue);
     border-radius: 50%;
     justify-self: center;
     align-self: center;
+    height: 60%;
 }
 
 .top .title {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 3rem;
-    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
     letter-spacing: 5px;
     text-align: center;
+    padding: 20px;
 }
 
 /*Main*/
@@ -174,12 +228,13 @@ form>* {
     font-size: 1rem;
     border-style: none;
     border-radius: 5px;
-    background-color: var(--nav-color);
+    background-color: var(--myblue);
     color: white;
 }
 
 .button:hover {
-    background-color: rgb(1, 29, 56);
+    background-color: var(--myyellow);
+    color: var(--myblue);
 }
 
 .button:focus {
@@ -201,18 +256,19 @@ form>* {
 
 .fa.fa-angle-up {
     font-size: 3rem;
-    color: var(--nav-color);
+    color: var(--myblue);
 }
 
 .fa.fa-angle-up:hover {
     font-size: 3rem;
-    color: rgb(1, 29, 56);
+    background-color: white;
+    color: var(--myyellow);
 }
 
 /*Footer*/
 
 .container>footer {
-    background-color: var(--nav-color);
+    background-color: var(--myblue);
 }
 
 footer {
@@ -232,10 +288,6 @@ footer>div {
     font-size: 0.75rem;
 }
 
-#contact {
-    margin-top: 20px;
-}
-
 .social {
     list-style: none;
     display: flex;
@@ -249,11 +301,39 @@ footer>div {
 .social .fa {
     color: white;
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .social i:hover,
 .social i:active {
-    color: var(--nav-color);
+    color: var(--myyellow);
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .top .title {
+        font-size: 2.3rem;
+    }
+
+    .work .section .photo {
+        order: 0;
+    }
+
+    .photo {
+        margin: 0 0 20px 0;
+    }
+
+    p {
+        flex: 1 1 100%;
+    }
+
+    .form {
+        max-width: 70vw;
+    }
+
+    form {
+        max-width: 60vw;
+    }
 }
 
 /* Mobile Styles */
@@ -304,33 +384,3 @@ footer>div {
         padding: 10px;
     }
 }
-
-/* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
-    .top .title {
-        font-size: 2.3rem;
-    }
-
-    .work .section .photo {
-        order: 0;
-    }
-
-    .photo {
-        margin: 0 0 20px 0;
-    }
-
-    p {
-        flex: 1 1 100%;
-    }
-
-    .form {
-        max-width: 70vw;
-    }
-
-    form {
-        max-width: 60vw;
-    }
-}
-
-/* Desktop Styles */
-@media only screen and (min-width: 961px) {}
