@@ -4,6 +4,7 @@
     --myblue: #012a50;
     --myyellow: #edd30a;
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 * {
